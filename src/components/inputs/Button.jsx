@@ -17,7 +17,7 @@ const StyledButton = styled.TouchableOpacity`
 const ButtonText = styled.Text`
   font-weight: 900;
   color: aliceblue;
-  font-size: 20px;
+  font-size: 25px;
 `;
 
 export default function Button({ children, onPress, bgColor, marginTop }) {
