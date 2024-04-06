@@ -9,6 +9,7 @@ import ExpositorSignup from "./src/screens/signup/expositor-signup/ExpositorSign
 import VisitorSignup from "./src/screens/signup/VisitorSignup";
 import LegalExpositorUserSignup from "./src/screens/signup/expositor-signup/LegalExpositorUserSignnup";
 import ExpositorUserSignup from "./src/screens/signup/expositor-signup/ExpositorUserSignup";
+import ForgotPassword from "./src/screens/ForgotPassword";
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,11 @@ export default function App() {
         <Stack.Screen
           name="LegalExpositorUserSignup"
           component={LegalExpositorUserSignup}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPassword}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
