@@ -5,6 +5,7 @@ import styled from "styled-components/native"; // Importe da forma correta
 
 const StyledButton = styled.TouchableOpacity`
   background-color: ${(props) => props.bgColor || "#fdaa2e"};
+  margin-top: ${(props) => (props.marginTop ? props.marginTop : "0") };
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,12 +17,12 @@ const StyledButton = styled.TouchableOpacity`
 const ButtonText = styled.Text`
   font-weight: 900;
   color: aliceblue;
-  font-size: 18px;
+  font-size: 20px;
 `;
 
-export default function Button({ children, onPress, bgColor }) {
+export default function Button({ children, onPress, bgColor, marginTop }) {
   return (
-    <StyledButton bgColor={bgColor} onPress={onPress}>
+    <StyledButton bgColor={bgColor} onPress={onPress} marginTop={marginTop}>
       <ButtonText>{children}</ButtonText>
     </StyledButton>
   );
