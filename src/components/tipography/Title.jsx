@@ -7,7 +7,9 @@ const StyledTitle = styled.Text`
   text-align: center;
   padding-top: ${(props) => props.paddingTop || "40px"};
   padding-bottom: ${(props) => props.paddingBottom || "40px"};
-  color: aliceblue;
+  margin-top: ${(props) => (props.marginTop ? props.marginTop : "20px") };
+
+  color: ${(props) => (props.color ? props.color : "aliceblue")};
 `;
 
 export default function Title({
@@ -15,12 +17,16 @@ export default function Title({
   paddingTop,
   paddingBottom,
   fontSize,
+  color,
+  marginTop
 }) {
   return (
     <StyledTitle
       paddingTop={paddingTop}
       paddingBottom={paddingBottom}
       fontSize={fontSize}
+      color={color}
+      marginTop={marginTop}
     >
       {children}
     </StyledTitle>
