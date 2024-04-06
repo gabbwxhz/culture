@@ -44,11 +44,11 @@ export default function ForgotPassword({ navigation }) {
             contentContainerStyle={{
               justifyContent: "center",
               alignItems: "center",
-              marginTop: 120,
+              marginTop: 90,
             }}
           >
           <Subtitle marginBottom="80px">Enviaremos um e-mail para verificação</Subtitle>
-            <Input placeholder="E-mail" />
+            <Input placeholder="E-mail" autoCorrect={false} icon="mail-outline" />
               <Button marginTop="40px" onPress={() => console.log('ahahah')}>Enviar</Button>
               <BackLoginContainer>
                 <StyledText>Voltar para</StyledText>
