@@ -43,10 +43,10 @@ export default function SignupChoose({ navigation }) {
             <Image
               source={require("../../../assets/images/user.png")}
               resizeMode="contain"
-              style={{ width: 130 }}
+              style={{ width: 120 }}
             />
           </Card>
-          <StyledText marginBottom="10px">Sou um expositor</StyledText>
+          <StyledText marginBottom="10px">Sou um visitante</StyledText>
         </RadiusBackground>
       </GradientBackground>
     </StyledSafeAreaView>
