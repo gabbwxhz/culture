@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledTitle = styled.Text`
-  font-size: 50px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "50px")};
   font-weight: 900;
   text-align: center;
   padding-top: ${(props) => props.paddingTop || "40px"};
@@ -10,9 +10,18 @@ const StyledTitle = styled.Text`
   color: aliceblue;
 `;
 
-export default function Title({ children, paddingTop, paddingBottom }) {
+export default function Title({
+  children,
+  paddingTop,
+  paddingBottom,
+  fontSize,
+}) {
   return (
-    <StyledTitle paddingTop={paddingTop} paddingBottom={paddingBottom}>
+    <StyledTitle
+      paddingTop={paddingTop}
+      paddingBottom={paddingBottom}
+      fontSize={fontSize}
+    >
       {children}
     </StyledTitle>
   );

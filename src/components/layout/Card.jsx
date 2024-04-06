@@ -5,7 +5,6 @@ import styled from "styled-components";
 const StyledCard = styled.TouchableOpacity`
   border: 2px solid #8b8b8b;
   border-radius: 20px;
-
   width: 160px;
   height: 160px;
   display: flex;
