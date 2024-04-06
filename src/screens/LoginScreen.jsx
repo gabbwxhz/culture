@@ -61,7 +61,7 @@ const Checkbox = styled.TouchableOpacity`
   margin-right: 10px;
 `;
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleCheckbox = () => {
@@ -105,7 +105,12 @@ export default function LoginScreen() {
                 <RememberMeText>Lembrar de mim!</RememberMeText>
               </RememberMeContainer>
               <Subtitle>Não tem uma conta?</Subtitle>
-              <Button bgColor={"#8B8B8B"}>Cadastre-se</Button>
+              <Button
+                bgColor={"#8B8B8B"}
+                onPress={() => navigation.navigate("SignupChoose")}
+              >
+                Cadastre-se
+              </Button>
             </KeyboardAvoidingView>
           </ScrollView>
         </RadiusBackground>
