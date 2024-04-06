@@ -49,7 +49,7 @@ export default function ForgotPassword({ navigation }) {
           >
           <Subtitle marginBottom="80px">Enviaremos um e-mail para verificação</Subtitle>
             <Input placeholder="E-mail" />
-              <Button marginTop="30px" onPress={() => console.log('ahahah')}>Enviar</Button>
+              <Button marginTop="40px" onPress={() => console.log('ahahah')}>Enviar</Button>
               <BackLoginContainer>
                 <StyledText>Voltar para</StyledText>
                 <TouchableOpacity onPress={() => navigation.navigate("Login")}>
