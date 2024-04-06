@@ -27,7 +27,7 @@ const StyledSafeAreaView = styled.SafeAreaView`
 const ForgotPasswordTouchable = styled.TouchableOpacity`
   margin-top: -20px;
   margin-bottom: 50px;
-  width: 100%;
+  width: 300px;
   display: flex;
   align-items: flex-end;
 `;
@@ -86,13 +86,13 @@ export default function LoginScreen({ navigation }) {
                 flexGrow: 1,
               }}
             >
-              <Input placeholder="Digite seu e-mail" autoCorrect={false} />
+              <Input placeholder="E-mail" autoCorrect={false} />
               <Input
-                placeholder="Digite sua senha"
+                placeholder="Senha"
                 secureTextEntry
                 autoCorrect={false}
               />
-              <ForgotPasswordTouchable>
+              <ForgotPasswordTouchable onPress={() => navigation.navigate('ForgotPassword')}>
                 <ForgotPasswordText>Esqueci minha senha!</ForgotPasswordText>
               </ForgotPasswordTouchable>
               <Button>Entrar</Button>
