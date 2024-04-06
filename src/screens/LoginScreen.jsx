@@ -11,12 +11,18 @@ import {
 import styled from "styled-components";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import GradientBackground from "./src/components/layout/GradientBackground";
-import RadiusBackground from "./src/components/layout/RadiusBackground";
-import Input from "./src/components/inputs/Input";
-import Button from "./src/components/inputs/Button";
-import Title from "./src/components/tipography/Title";
-import Subtitle from "./src/components/tipography/Subtitle";
+import GradientBackground from "../components/layout/GradientBackground";
+import RadiusBackground from "../components/layout/RadiusBackground";
+import Input from "../components/inputs/Input";
+import Button from "../components/inputs/Button";
+import Title from "../components/tipography/Title";
+import Subtitle from "../components/tipography/Subtitle";
+
+const StyledSafeAreaView = styled.SafeAreaView`
+  flex: 1;
+  background-color: aliceblue;
+  align-items: center;
+`;
 
 const ForgotPasswordTouchable = styled.TouchableOpacity`
   margin-top: -20px;
@@ -63,9 +69,7 @@ export default function LoginScreen() {
   };
 
   return (
-    <SafeAreaView
-      style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}
-    >
+    <StyledSafeAreaView>
       <GradientBackground>
         <Title>Bem vindo(a) ao App!</Title>
         <RadiusBackground>
@@ -76,29 +80,36 @@ export default function LoginScreen() {
               marginTop: 120,
             }}
           >
-            <Input placeholder="Digite seu e-mail" autoCorrect={false} />
-            <Input
-              placeholder="Digite sua senha"
-              secureTextEntry
-              autoCorrect={false}
-            />
-            <ForgotPasswordTouchable>
-              <ForgotPasswordText>Esqueci minha senha!</ForgotPasswordText>
-            </ForgotPasswordTouchable>
-            <Button>Entrar</Button>
-            <RememberMeContainer>
-              <Checkbox onPress={toggleCheckbox}>
-                {isChecked && (
-                  <MaterialIcons name="check" size={15} color="#8b8b8b" />
-                )}
-              </Checkbox>
-              <RememberMeText>Lembrar de mim!</RememberMeText>
-            </RememberMeContainer>
-            <Subtitle>Não tem uma conta?</Subtitle>
-            <Button bgColor={"#8B8B8B"}>Cadastre-se</Button>
+            <KeyboardAvoidingView
+              style={{
+                alignItems: "center",
+                flexGrow: 1,
+              }}
+            >
+              <Input placeholder="Digite seu e-mail" autoCorrect={false} />
+              <Input
+                placeholder="Digite sua senha"
+                secureTextEntry
+                autoCorrect={false}
+              />
+              <ForgotPasswordTouchable>
+                <ForgotPasswordText>Esqueci minha senha!</ForgotPasswordText>
+              </ForgotPasswordTouchable>
+              <Button>Entrar</Button>
+              <RememberMeContainer>
+                <Checkbox onPress={toggleCheckbox}>
+                  {isChecked && (
+                    <MaterialIcons name="check" size={15} color="#8b8b8b" />
+                  )}
+                </Checkbox>
+                <RememberMeText>Lembrar de mim!</RememberMeText>
+              </RememberMeContainer>
+              <Subtitle>Não tem uma conta?</Subtitle>
+              <Button bgColor={"#8B8B8B"}>Cadastre-se</Button>
+            </KeyboardAvoidingView>
           </ScrollView>
         </RadiusBackground>
       </GradientBackground>
-    </SafeAreaView>
+    </StyledSafeAreaView>
   );
 }
