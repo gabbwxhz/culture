@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "culture-app",
-    "slug": "test",
+    "slug": "culture-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.culture.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.culture.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "extra.eas.projectId": "caa9f452-cb01-4baa-bc11-9328da1b5623",
+        "projectId": "d046b52c-1186-4fe8-8e4d-7cd39c03bf18"
+      }
     }
   }
 }
