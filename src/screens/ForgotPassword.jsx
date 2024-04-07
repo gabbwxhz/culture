@@ -1,20 +1,19 @@
-import React from "react";
-import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
+import React from 'react'
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
+import styled from 'styled-components'
 
-import styled from "styled-components";
-
-import GradientBackground from "../components/layout/GradientBackground";
-import RadiusBackground from "../components/layout/RadiusBackground";
+import Button from '../components/inputs/Button'
 import Input from '../components/inputs/Input'
-import Title from "../components/tipography/Title";
-import Subtitle from '../components/tipography/Subtitle';
-import Button from "../components/inputs/Button";
+import GradientBackground from '../components/layout/GradientBackground'
+import RadiusBackground from '../components/layout/RadiusBackground'
+import Subtitle from '../components/tipography/Subtitle'
+import Title from '../components/tipography/Title'
 
 const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
   background-color: aliceblue;
   align-items: center;
-`;
+`
 
 const StyledText = styled.Text`
   color: #8b8b8b;
@@ -22,43 +21,43 @@ const StyledText = styled.Text`
 `
 
 const StyledTextButton = styled.Text`
-    font-weight: 900;
-    color: #8b8b8b;
+  font-weight: 900;
+  color: #8b8b8b;
 `
 
 const BackLoginContainer = styled.View`
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
 `
 
 export default function ForgotPassword({ navigation }) {
   return (
     <StyledSafeAreaView>
-      <GradientBackground paddingTop="80px"  >
-        <Title paddingBottom="80px" >
-            Esqueci minha senha!
-        </Title>
+      <GradientBackground paddingTop="80px">
+        <Title paddingBottom="80px">Esqueci minha senha!</Title>
         <RadiusBackground>
-        <ScrollView
+          <ScrollView
             contentContainerStyle={{
-              justifyContent: "center",
-              alignItems: "center",
-              marginTop: 90,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 90
             }}
           >
-          <Subtitle marginBottom="80px">Enviaremos um e-mail para verificação</Subtitle>
+            <Subtitle marginBottom="80px">Enviaremos um e-mail para verificação</Subtitle>
             <Input placeholder="E-mail" autoCorrect={false} icon="mail-outline" />
-              <Button marginTop="40px" onPress={() => console.log('ahahah')}>Enviar</Button>
-              <BackLoginContainer>
-                <StyledText>Voltar para</StyledText>
-                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                  <StyledTextButton>Login</StyledTextButton>
-                </TouchableOpacity>
-              </BackLoginContainer>
+            <Button marginTop="40px" onPress={() => console.log('ahahah')}>
+              Enviar
+            </Button>
+            <BackLoginContainer>
+              <StyledText>Voltar para</StyledText>
+              <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <StyledTextButton>Login</StyledTextButton>
+              </TouchableOpacity>
+            </BackLoginContainer>
           </ScrollView>
         </RadiusBackground>
       </GradientBackground>
     </StyledSafeAreaView>
-  );
+  )
 }

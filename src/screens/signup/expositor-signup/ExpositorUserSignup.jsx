@@ -1,3 +1,1 @@
-export default function ExpositorUserSignup() {
-  return;
-}
+export default function ExpositorUserSignup() {}

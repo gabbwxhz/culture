@@ -1,6 +1,5 @@
-import React from "react";
-
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const RadiusContainer = styled.View`
   border-top-right-radius: 100px;
@@ -10,8 +9,8 @@ const RadiusContainer = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export default function RadiusBackground({ children }) {
-  return <RadiusContainer>{children}</RadiusContainer>;
+  return <RadiusContainer>{children}</RadiusContainer>
 }

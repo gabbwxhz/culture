@@ -1,27 +1,25 @@
-import React from "react";
-import { Image } from "react-native";
+import React from 'react'
+import { Image } from 'react-native'
+import styled from 'styled-components'
 
-import styled from "styled-components";
-
-import GradientBackground from "../../components/layout/GradientBackground";
-import RadiusBackground from "../../components/layout/RadiusBackground";
-import Title from "../../components/tipography/Title";
-import Card from "../../components/layout/Card";
+import Card from '../../components/layout/Card'
+import GradientBackground from '../../components/layout/GradientBackground'
+import RadiusBackground from '../../components/layout/RadiusBackground'
+import Title from '../../components/tipography/Title'
 
 const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
   background-color: aliceblue;
   align-items: center;
-`;
+`
 
 const StyledText = styled.Text`
   margin-top: 5px;
-  margin-bottom: ${(props) =>
-    props.marginBottom ? props.marginBottom : "70px"};
+  margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : '70px')};
   font-size: 20px;
   color: #8b8b8b;
   font-weight: 500;
-`;
+`
 
 export default function SignupChoose({ navigation }) {
   return (
@@ -31,17 +29,17 @@ export default function SignupChoose({ navigation }) {
           Cadastro
         </Title>
         <RadiusBackground>
-          <Card onPress={() => navigation.navigate("ExpositorSignup")}>
+          <Card onPress={() => navigation.navigate('ExpositorSignup')}>
             <Image
-              source={require("../../../assets/images/speaker.png")}
+              source={require('../../../assets/images/speaker.png')}
               resizeMode="contain"
               style={{ width: 150 }}
             />
           </Card>
           <StyledText>Sou um expositor</StyledText>
-          <Card onPress={() => navigation.navigate("VisitorSignup")}>
+          <Card onPress={() => navigation.navigate('VisitorSignup')}>
             <Image
-              source={require("../../../assets/images/user.png")}
+              source={require('../../../assets/images/user.png')}
               resizeMode="contain"
               style={{ width: 120 }}
             />
@@ -50,5 +48,5 @@ export default function SignupChoose({ navigation }) {
         </RadiusBackground>
       </GradientBackground>
     </StyledSafeAreaView>
-  );
+  )
 }

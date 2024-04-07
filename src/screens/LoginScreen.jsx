@@ -1,28 +1,20 @@
-import React, { useState } from "react";
-import {
-  Text,
-  View,
-  SafeAreaView,
-  KeyboardAvoidingView,
-  TextInput,
-  ScrollView,
-} from "react-native";
+import { MaterialIcons } from '@expo/vector-icons'
+import React, { useState } from 'react'
+import { KeyboardAvoidingView, ScrollView } from 'react-native'
+import styled from 'styled-components'
 
-import styled from "styled-components";
-import { MaterialIcons } from "@expo/vector-icons";
-
-import GradientBackground from "../components/layout/GradientBackground";
-import RadiusBackground from "../components/layout/RadiusBackground";
-import Input from "../components/inputs/Input";
-import Button from "../components/inputs/Button";
-import Title from "../components/tipography/Title";
-import Subtitle from "../components/tipography/Subtitle";
+import Button from '../components/inputs/Button'
+import Input from '../components/inputs/Input'
+import GradientBackground from '../components/layout/GradientBackground'
+import RadiusBackground from '../components/layout/RadiusBackground'
+import Subtitle from '../components/tipography/Subtitle'
+import Title from '../components/tipography/Title'
 
 const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
   background-color: aliceblue;
   align-items: center;
-`;
+`
 
 const ForgotPasswordTouchable = styled.TouchableOpacity`
   margin-top: -20px;
@@ -30,12 +22,12 @@ const ForgotPasswordTouchable = styled.TouchableOpacity`
   width: 300px;
   display: flex;
   align-items: flex-end;
-`;
+`
 
 const ForgotPasswordText = styled.Text`
   color: #8b8b8b;
   margin-right: 5px;
-`;
+`
 
 const RememberMeContainer = styled.View`
   margin-top: 10px;
@@ -44,11 +36,11 @@ const RememberMeContainer = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const RememberMeText = styled.Text`
   color: #8b8b8b;
-`;
+`
 
 const Checkbox = styled.TouchableOpacity`
   width: 20px;
@@ -59,14 +51,14 @@ const Checkbox = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   margin-right: 10px;
-`;
+`
 
 export default function LoginScreen({ navigation }) {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false)
 
   const toggleCheckbox = () => {
-    setIsChecked(!isChecked);
-  };
+    setIsChecked(!isChecked)
+  }
 
   return (
     <StyledSafeAreaView>
@@ -75,41 +67,31 @@ export default function LoginScreen({ navigation }) {
         <RadiusBackground>
           <ScrollView
             contentContainerStyle={{
-              justifyContent: "center",
-              alignItems: "center",
-              marginTop: 120,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 120
             }}
           >
             <KeyboardAvoidingView
               style={{
-                alignItems: "center",
-                flexGrow: 1,
+                alignItems: 'center',
+                flexGrow: 1
               }}
             >
               <Input placeholder="E-mail" autoCorrect={false} icon="mail-outline" />
-              <Input
-                placeholder="Senha"
-                secureTextEntry
-                autoCorrect={false}
-                icon="lock-outline"
-              />
+              <Input placeholder="Senha" secureTextEntry autoCorrect={false} icon="lock-outline" />
               <ForgotPasswordTouchable onPress={() => navigation.navigate('ForgotPassword')}>
                 <ForgotPasswordText>Esqueci minha senha!</ForgotPasswordText>
               </ForgotPasswordTouchable>
               <Button>Entrar</Button>
               <RememberMeContainer>
                 <Checkbox onPress={toggleCheckbox}>
-                  {isChecked && (
-                    <MaterialIcons name="check" size={15} color="#8b8b8b" />
-                  )}
+                  {isChecked && <MaterialIcons name="check" size={15} color="#8b8b8b" />}
                 </Checkbox>
                 <RememberMeText>Lembrar de mim!</RememberMeText>
               </RememberMeContainer>
               <Subtitle>Não tem uma conta?</Subtitle>
-              <Button
-                bgColor={"#8B8B8B"}
-                onPress={() => navigation.navigate("SignupChoose")}
-              >
+              <Button bgColor="#8B8B8B" onPress={() => navigation.navigate('SignupChoose')}>
                 Cadastre-se
               </Button>
             </KeyboardAvoidingView>
@@ -117,5 +99,5 @@ export default function LoginScreen({ navigation }) {
         </RadiusBackground>
       </GradientBackground>
     </StyledSafeAreaView>
-  );
+  )
 }

@@ -1,3 +1,1 @@
-export default function LegalUserSignup() {
-  return;
-}
+export default function LegalUserSignup() {}

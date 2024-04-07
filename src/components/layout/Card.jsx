@@ -1,6 +1,5 @@
-import React from "react";
-
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const StyledCard = styled.TouchableOpacity`
   border: 2px solid #8b8b8b;
@@ -10,8 +9,8 @@ const StyledCard = styled.TouchableOpacity`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 export default function Card({ children, onPress }) {
-  return <StyledCard onPress={onPress}>{children}</StyledCard>;
+  return <StyledCard onPress={onPress}>{children}</StyledCard>
 }

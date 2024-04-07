@@ -1,28 +1,23 @@
-import React from "react";
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { StatusBar } from 'expo-status-bar'
+import React from 'react'
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { StatusBar} from "expo-status-bar";
+import ForgotPassword from './src/screens/ForgotPassword'
+import LoginScreen from './src/screens/LoginScreen'
+import SignupChoose from './src/screens/signup/SignupChoose'
+import VisitorSignup from './src/screens/signup/VisitorSignup'
+import ExpositorSignup from './src/screens/signup/expositor-signup/ExpositorSignup'
+import ExpositorUserSignup from './src/screens/signup/expositor-signup/ExpositorUserSignup'
+import LegalExpositorUserSignup from './src/screens/signup/expositor-signup/LegalExpositorUserSignnup'
 
-import LoginScreen from "./src/screens/LoginScreen";
-import SignupChoose from "./src/screens/signup/SignupChoose";
-import ExpositorSignup from "./src/screens/signup/expositor-signup/ExpositorSignup";
-import VisitorSignup from "./src/screens/signup/VisitorSignup";
-import LegalExpositorUserSignup from "./src/screens/signup/expositor-signup/LegalExpositorUserSignnup";
-import ExpositorUserSignup from "./src/screens/signup/expositor-signup/ExpositorUserSignup";
-import ForgotPassword from "./src/screens/ForgotPassword";
-
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen
           name="SignupChoose"
           component={SignupChoose}
@@ -56,5 +51,5 @@ export default function App() {
       </Stack.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>
-  );
+  )
 }
