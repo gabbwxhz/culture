@@ -1,4 +1,4 @@
-import { MaterialIcons } from '@expo/vector-icons'
+import { MaterialIcons, Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -20,10 +20,20 @@ const InputField = styled.TextInput`
   margin-left: 10px;
 `
 
-export default function Input({ placeholder, value, secureTextEntry, autoCorrect, icon }) {
+export default function Input({
+  placeholder,
+  value,
+  secureTextEntry,
+  autoCorrect,
+  iconType,
+  icon
+}) {
   return (
     <StyledInputContainer>
-      {icon && <MaterialIcons name={icon} size={24} color="#fdaa2e" />}
+      {iconType === 'MaterialIcons' && icon && (
+        <MaterialIcons name={icon} size={24} color="#fdaa2e" />
+      )}
+      {iconType === 'Ionicons' && icon && <Ionicons name={icon} size={24} color="#fdaa2e" />}
       <InputField
         placeholder={placeholder}
         value={value}
