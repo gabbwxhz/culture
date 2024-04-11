@@ -28,14 +28,27 @@ export default function SignupChoose({ navigation }) {
               marginTop: 130
             }}
           >
-            <Input placeholder="Nome" icon="person-outline" autoCorrect={false} />
+            <Input
+              placeholder="Nome"
+              icon="person-outline"
+              autoCorrect={false}
+              iconType="MaterialIcons" // Especificando o tipo de ícone
+            />
+
             <Input
               placeholder="E-mail"
-              keyboardType="email-address"
               icon="mail-outline"
               autoCorrect={false}
+              iconType="MaterialIcons" // Especificando o tipo de ícone
             />
-            <Input placeholder="Senha" secureTextEntry icon="lock-outline" autoCorrect={false} />
+
+            <Input
+              placeholder="Senha"
+              icon="lock-outline"
+              secureTextEntry
+              autoCorrect={false}
+              iconType="MaterialIcons" // Especificando o tipo de ícone
+            />
 
             <Button marginTop="40px">Cadastrar</Button>
           </ScrollView>
