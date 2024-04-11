@@ -78,8 +78,20 @@ export default function LoginScreen({ navigation }) {
                 flexGrow: 1
               }}
             >
-              <Input placeholder="E-mail" autoCorrect={false} icon="mail-outline" />
-              <Input placeholder="Senha" secureTextEntry autoCorrect={false} icon="lock-outline" />
+              <Input
+                placeholder="E-mail"
+                icon="mail-outline"
+                autoCorrect={false}
+                iconType="MaterialIcons" // Especificando o tipo de ícone
+              />
+
+              <Input
+                placeholder="Senha"
+                icon="lock-outline"
+                secureTextEntry
+                autoCorrect={false}
+                iconType="MaterialIcons" // Especificando o tipo de ícone
+              />
               <ForgotPasswordTouchable onPress={() => navigation.navigate('ForgotPassword')}>
                 <ForgotPasswordText>Esqueci minha senha!</ForgotPasswordText>
               </ForgotPasswordTouchable>
